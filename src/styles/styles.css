@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     display: grid;
-    min-height: 100dvh;
+    min-height: 100vh;
     grid-template-rows: auto 1fr auto;
     margin: 0;
     padding: 0;
@@ -9,7 +9,7 @@ body {
 }
 
 .main-header {
-    background-color: #333;
+    background-color: #fd0000;
     color: white;
     padding: 20px;
     text-align: center;
@@ -17,37 +17,106 @@ body {
 
 nav ul {
     list-style-type: none;
-    margin: 0;
+    margin: 10px 0;
     padding: 0;
 }
 
 nav ul li {
     display: inline;
-    margin-right: 10px;
+    margin-right: 20px; /* Aumentar espaciado */
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-weight: bold; /* Negrita para los enlaces */
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Efecto hover */
 }
 
 .main-content {
     display: flex;
     justify-content: space-around;
     padding: 20px;
+    max-width: 1200px; /* Max ancho para mejorar el diseño */
+    margin: auto; /* Centrar el contenido */
+    flex-wrap: wrap; /* Permitir el ajuste de contenido */
 }
 
 .purpose-section,
 .about-section {
+    background-color: white;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
     width: 45%;
 }
 
+.register-section {
+    background-color: white;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 20px;
+    width: 100%;
+    margin-top: 20px; /* Espacio superior */
+}
+
+.register-section h2 {
+    color: #fd0000; /* Color del título */
+}
+
+.register-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-section label {
+    margin: 10px 0 5px;
+}
+
+.register-section input {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-section button {
+    background-color: #fd0000;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.register-section button:hover {
+    background-color: #c60000; /* Color más oscuro al pasar el ratón */
+}
+
 .main-footer {
-    background-color: #333;
+    background-color: #dd0c0c;
     color: white;
     text-align: center;
-    padding: 10px 0;
-    position: fixed;
+    padding: 15px 0;
+    position: relative; /* Cambiar a relativo para evitar problemas de contenido */
     width: 100%;
-    bottom: 0;
 }
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+        align-items: center;
+    }
+
+    .purpose-section,
+    .about-section,
+    .register-section {
+        width: 90%; /* Ancho más amplio en móviles */
+    }
+}
+
+
+
